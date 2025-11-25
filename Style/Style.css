@@ -1,0 +1,396 @@
+/*reset*/
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color:#890907 ;
+}
+
+/* ESTILOS DEL HEADER Y NAVEGACIÓN */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    background-color:#000000 ;
+}
+
+.Logo {
+    width: 100px;
+    height: auto;
+    margin-left: 0;
+}
+
+h1 {
+    color: antiquewhite;
+    font-style: oblique;
+    
+}
+
+.Nav-bar {
+    padding-left: 0;
+    color: antiquewhite;
+    text-align: left;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: antiquewhite;
+    transition: color 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.Nav-bar ul li a:hover {
+    color: #ffaa00;
+}
+
+/* ESTILOS DEL MAIN: PÁGINA DE INICIO */
+.section-main {
+    position: relative; 
+    height: 900px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.section-main img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    z-index: 1; 
+}
+
+.contenido-superpuesto {
+    position: relative; 
+    z-index: 2; 
+    color: #ffffff; 
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 25px 50px;
+    border-radius: 8px;
+    max-width: 700px;
+    text-align: center;
+}
+
+.contenido-superpuesto h2 {
+    font-family: 'DM Serif Text', serif; 
+    font-size: 2.2em;
+    margin-top: 0;
+}
+
+.boton-llamado {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    background-color: #ffaa00; 
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-llamado:hover {
+    background-color: #e69500;
+}
+
+/*ESTILOS DEL MAIN: PÁGINA DE SERVICIOS*/
+h2{
+    color: antiquewhite;
+}
+
+.caja-servicio {
+    flex-basis: 23%; 
+    padding: 25px;
+    background-color: #000000; 
+    border: 1px solid aliceblue; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    text-align: left;
+}
+
+.caja-servicio h3 {
+    color: #890907; 
+    font-size: 1.5em;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.caja-servicio h4 {
+    color: #890907; 
+    font-size: 1em;
+    font-weight: 600; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.caja-servicio p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.caja-servicio:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+}
+
+/*ESTILOS DEL MAIN: PÁGINA CÓMO FUNCIONAMOS*/
+.titulo-central {
+    padding: 60px 40px 20px; 
+    text-align: center;
+    background-color:#890907 ; 
+}
+
+.titulo-central h1 {
+    font-size: 2.2em;
+    color: antiquewhite;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #890907;
+}
+
+.beneficios-container {
+    display: flex;
+    justify-content: center; 
+    gap: 50px; 
+    padding: 40px 40px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.columna-beneficio {
+    flex-basis: 50%; 
+    padding: 0; 
+    border: none;
+    border-radius: 0;
+    background-color: transparent; 
+    box-shadow: none; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-end; 
+    min-height: 250px; 
+    border-left: 3px solid #000000; 
+    padding-left: 20px;
+}
+
+.columna-beneficio h3 {
+    color:antiquewhite; 
+    font-size: 1.6em;
+    margin-top: 0;
+    padding-bottom: 5px;
+    border-bottom: none; 
+}
+
+.columna-beneficio p {
+    color: antiquewhite;
+    line-height: 1.6;
+    margin-bottom: 0; 
+}
+
+/*ESTILOS DEL MAIN: PÁGINA DE CONTACTO (FORMULARIO)*/
+.seccion-formulario {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.seccion-formulario h1 {
+    color: #890907;
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.seccion-formulario p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.formulario-contenedor {
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.campo-grupo {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.campo-grupo label {
+    display: block; 
+    font-weight: bold;
+    color: #3c3b3b;
+    margin-bottom: 5px;
+}
+
+.campo-grupo input,
+.campo-grupo textarea {
+    width: 100%; 
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.campo-grupo input:focus,
+.campo-grupo textarea:focus {
+    border-color: #890907; 
+    outline: none;
+}
+
+.boton-enviar {
+    background-color: #890907; 
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%; 
+}
+
+.boton-enviar:hover {
+    background-color: #FFD700; 
+}
+/*ESTILOS DEL MAIN: PÁGINA DE BENEFICIOS */
+
+.beneficios-layout {
+    
+    display: flex;
+    align-items: center; 
+    gap: 40px; 
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto; 
+    background-color: #890907; 
+}
+
+
+.imagen-bloque {
+    flex-basis: 50%; 
+    overflow: hidden; 
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(119, 13, 13, 0.5);
+}
+
+.imagen-bloque img {
+    
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+.contenido-bloque {
+    flex-basis: 50%; 
+    text-align: left;
+    color: antiquewhite; 
+}
+
+.contenido-bloque h2 {
+    font-size: 2.2em;
+    color: antiquewhite; 
+    color: antiquewhite; 
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333; 
+    padding-bottom: 10px;
+}
+
+.contenido-bloque .subtitulo-principal {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+
+.contenido-bloque ul {
+    list-style-type: '👉 ';
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.contenido-bloque li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+/*Estilos del footer*/
+footer {
+  
+  background-color: #333; 
+  color: #f4f4f4; 
+  padding: 20px 0; 
+  font-family: 'Roboto', sans-serif; 
+  text-align: center; 
+   }
+   
+   footer section {
+  
+  text-align: center; 
+  margin-bottom: 20px; 
+}
+
+footer section p {
+  
+  margin: 5px 0; 
+  font-size: 0.95em; 
+}
+
+.footer-bottom {
+ 
+  border-top: 1px solid #555; 
+  padding-top: 15px;
+  font-size: 0.8em; 
+  color: #aaaaaa; 
+  text-align: center;
+  line-height: 1.4; 
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+  padding: 0 15px; 
+}
+
+footer a {
+  color: #f4f4f4; 
+  text-decoration: none;
+  transition: color 0.3s ease; 
+}
+
+
+footer a:hover {
+  color: #FFD700; 
+  text-decoration: underline; 
+}
