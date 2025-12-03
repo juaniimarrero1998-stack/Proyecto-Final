@@ -1,0 +1,262 @@
+
+// DEFINICIÓN DE VARIABLES Y OPERADORES
+
+$color-principal: #E01A24;         
+$color-fondo-claro: #FFFFFF;       
+$color-texto-oscuro: #000000;      
+$color-detalle-oro: #FDB813;       
+$color-hover-oro: #e69500;         
+$color-gris-secundario: #555;      
+
+$font-principal: "Nunito", sans-serif;
+$font-titulo: 'DM Serif Text', serif;
+
+$breakpoint-mobile: 768px;
+
+
+$espacio-base: 15px;
+$padding-header: $espacio-base * 2; 
+
+
+//  DEFINICIÓN DE MIXINS
+
+@mixin boton-hover-base($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@mixin reset-enlace {
+    border: none;
+    text-decoration: none;
+    display: flex;
+}
+
+@mixin titulo-caja {
+    color: $color-principal;
+    font-size: 1.5em;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+
+// DEFINICIÓN DE PLACEHOLDERS )
+
+%estilo-base-caja {
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+
+//DEFINICIONES DE KEYFRAMES
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+// ESTILOS BASE
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-principal;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: $color-principal;
+}
+
+h1 { color: $color-fondo-claro; }
+h2 { color: $color-fondo-claro; }
+
+
+// HEADER Y NAVEGACIÓN (Anidamiento explícito)
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 $padding-header; // Uso de variable con operador
+    background-color: $color-texto-oscuro;
+    animation: fadeIn 1s ease-out;
+
+    a { // ANIDAMIENTO y uso de Mixin
+        @include reset-enlace;
+    }
+
+    .Logo {
+        width: 100px;
+        height: auto;
+        margin-left: 0;
+        border: none;
+    }
+
+    .Nombre-empresa {
+        color: $color-fondo-claro;
+        font-style: oblique;
+    }
+
+    .Nav-bar {
+        color: $color-fondo-claro;
+        display: flex;
+        width: auto;
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: $espacio-base * 2; // Uso de variable con operador
+            padding-left: 0;
+
+            li a { 
+                text-decoration: none;
+                color: $color-fondo-claro;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: $color-detalle-oro;
+                }
+            }
+        }
+    }
+}
+
+
+// COMPONENTES REUTILIZABLES
+
+
+.boton-llamado {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    background-color: $color-detalle-oro;
+    color: $color-texto-oscuro;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.1s;
+    
+    &:hover {
+        background-color: $color-hover-oro;
+        transform: scale(1.05); 
+    }
+}
+
+.boton-enviar {
+    background-color: $color-principal;
+    color: $color-fondo-claro;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; 
+
+    &:hover { // Uso de Mixin
+        @include boton-hover-base($color-detalle-oro, $color-texto-oscuro);
+        box-shadow: 0 5px 15px rgba($color-principal, 0.5);
+    }
+}
+
+
+// PÁGINA DE SERVICIOS 
+
+.caja-servicio {
+    flex-basis: 23%; 
+    padding: $espacio-base * 1.66; 
+    background-color: $color-texto-oscuro;
+    border: 1px solid $color-fondo-claro; 
+    text-align: left;
+    animation: slideInFromTop 0.6s ease-out;
+
+    // HERENCIA: @extend
+    @extend %estilo-base-caja;
+
+    h3 { // Uso de Mixin
+        @include titulo-caja;
+        border-bottom: 2px solid #ddd;
+    }
+
+    h4 {
+        color: $color-principal;
+        font-size: 1em;
+        font-weight: 600; 
+        margin: $espacio-base - 5 0; // 
+    }
+
+    p {
+        font-size: 0.9em;
+        color: $color-gris-secundario;
+    }
+
+    &:hover {
+        transform: translateY(-10px); 
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); 
+    }
+}
+
+
+// PÁGINA DE CONTACTO (Anidamiento y Mixins)
+
+.seccion-formulario {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: $color-fondo-claro;
+
+    .formulario-contenedor {
+       
+
+        .campo-grupo {
+           
+
+            input, textarea {
+               
+                &:focus { 
+                    border-color: $color-principal;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+// MEDIA QUERIES (Anidamiento y Variables)
+
+@media (max-width: $breakpoint-mobile) {
+    
+    header {
+        flex-direction: column;
+        padding: $espacio-base 10px; 
+
+        .Logo { margin-bottom: $espacio-base - 5; } 
+        
+        .Nav-bar {
+            ul { gap: $espacio-base; padding: 0; }
+        }
+    }
+
+    .columna-beneficio {
+        border-bottom: 3px solid $color-texto-oscuro;
+        padding-bottom: $espacio-base * 1.33; 
+    }
+    
+    
+}

@@ -1,20 +1,46 @@
-/*reset*/
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulseShadow {
+    0% { box-shadow: 0 0 0 rgba(253, 184, 19, 0); }
+    50% { box-shadow: 0 0 10px rgba(253, 184, 19, 0.8); }
+    100% { box-shadow: 0 0 0 rgba(253, 184, 19, 0); }
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 body{
     margin: 0;
     padding: 0;
     font-family: "Nunito", sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    background-color:#890907 ;
+  
+    background-color: #E01A24;
 }
 
-/* ESTILOS DEL HEADER Y NAVEGACIÓN */
+
 header{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
-    background-color:#000000 ;
+    
+    background-color: #000000;
+    animation: fadeIn 1s ease-out;
 }
 
 .Logo {
@@ -24,21 +50,23 @@ header{
 }
 
 h1 {
-    color: antiquewhite;
+   
+    color: #FFFFFF;
     font-style: oblique;
-    
 }
 
 .Nav-bar {
     padding-left: 0;
-    color: antiquewhite;
+   
+    color: #FFFFFF;
     text-align: left;
     display: flex;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: antiquewhite;
+    
+    color: #FFFFFF;
     transition: color 0.3s ease;
 }
 
@@ -49,10 +77,11 @@ nav ul {
 }
 
 .Nav-bar ul li a:hover {
-    color: #ffaa00;
+    
+    color: #FDB813;
 }
 
-/* ESTILOS DEL MAIN: PÁGINA DE INICIO */
+
 .section-main {
     position: relative; 
     height: 900px; 
@@ -74,7 +103,8 @@ nav ul {
 .contenido-superpuesto {
     position: relative; 
     z-index: 2; 
-    color: #ffffff; 
+    
+    color: #FFFFFF; 
     background-color: rgba(0, 0, 0, 0.6); 
     padding: 25px 50px;
     border-radius: 8px;
@@ -92,36 +122,43 @@ nav ul {
     display: inline-block;
     padding: 12px 25px;
     margin-top: 20px;
-    background-color: #ffaa00; 
-    color: #333;
+    
+    background-color: #FDB813; 
+    
+    color: #000000;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.1s;
 }
 
 .boton-llamado:hover {
+    
     background-color: #e69500;
+    transform: scale(1.05); 
 }
 
-/*ESTILOS DEL MAIN: PÁGINA DE SERVICIOS*/
+
 h2{
-    color: antiquewhite;
+   
+    color: #FFFFFF;
 }
 
 .caja-servicio {
     flex-basis: 23%; 
     padding: 25px;
     background-color: #000000; 
-    border: 1px solid aliceblue; 
+    border: 1px solid #FFFFFF; 
     border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     text-align: left;
+    animation: slideInFromTop 0.6s ease-out;
 }
 
 .caja-servicio h3 {
-    color: #890907; 
+    
+    color: #E01A24; 
     font-size: 1.5em;
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
@@ -129,7 +166,7 @@ h2{
 }
 
 .caja-servicio h4 {
-    color: #890907; 
+    color: #E01A24; 
     font-size: 1em;
     font-weight: 600; 
     margin-top: 10px;
@@ -138,27 +175,27 @@ h2{
 
 .caja-servicio p {
     font-size: 0.9em;
-    color: #555;
+    color:  #555;
 }
 
 .caja-servicio:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+    transform: translateY(-10px); 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); 
 }
 
-/*ESTILOS DEL MAIN: PÁGINA CÓMO FUNCIONAMOS*/
+
 .titulo-central {
     padding: 60px 40px 20px; 
     text-align: center;
-    background-color:#890907 ; 
+    background-color: #E01A24; 
 }
 
 .titulo-central h1 {
     font-size: 2.2em;
-    color: antiquewhite;
+    color: #FFFFFF;
     max-width: 900px;
     margin: 0 auto;
-    background-color: #890907;
+    background-color: #E01A24;
 }
 
 .beneficios-container {
@@ -186,7 +223,8 @@ h2{
 }
 
 .columna-beneficio h3 {
-    color:antiquewhite; 
+    
+    color: #FFFFFF; 
     font-size: 1.6em;
     margin-top: 0;
     padding-bottom: 5px;
@@ -194,20 +232,22 @@ h2{
 }
 
 .columna-beneficio p {
-    color: antiquewhite;
+    
+    color: #FFFFFF;
     line-height: 1.6;
     margin-bottom: 0; 
 }
 
-/*ESTILOS DEL MAIN: PÁGINA DE CONTACTO (FORMULARIO)*/
+
 .seccion-formulario {
     padding: 60px 20px;
     text-align: center;
-    background-color: #f8f8f8;
+    background-color: #FFFFFF;
 }
 
 .seccion-formulario h1 {
-    color: #890907;
+   
+    color: #E01A24;
     font-size: 2em;
     margin-bottom: 5px;
 }
@@ -221,7 +261,7 @@ h2{
     max-width: 600px; 
     margin: 0 auto; 
     padding: 30px;
-    background-color: #fff;
+    background-color: #FFFFFF;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -235,7 +275,7 @@ h2{
 .campo-grupo label {
     display: block; 
     font-weight: bold;
-    color: #3c3b3b;
+    color: #000000;
     margin-bottom: 5px;
 }
 
@@ -252,65 +292,65 @@ h2{
 
 .campo-grupo input:focus,
 .campo-grupo textarea:focus {
-    border-color: #890907; 
+    
+    border-color: #E01A24; 
     outline: none;
 }
 
 .boton-enviar {
-    background-color: #890907; 
-    color: white;
+    
+    background-color: #E01A24; 
+    color: #FFFFFF;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1.1em;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     width: 100%; 
 }
 
 .boton-enviar:hover {
-    background-color: #FFD700; 
+    
+    background-color: #FDB813; 
+    color: #000000;
+    box-shadow: 0 5px 15px rgba(224, 26, 36, 0.5);
 }
-/*ESTILOS DEL MAIN: PÁGINA DE BENEFICIOS */
+
 
 .beneficios-layout {
-    
     display: flex;
     align-items: center; 
     gap: 40px; 
     padding: 60px 40px;
     max-width: 1200px;
     margin: 0 auto; 
-    background-color: #890907; 
+    background-color: #E01A24; 
 }
-
 
 .imagen-bloque {
     flex-basis: 50%; 
     overflow: hidden; 
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(119, 13, 13, 0.5);
+    box-shadow: 0 4px 15px rgba(224, 26, 36, 0.5);
 }
 
 .imagen-bloque img {
-    
     display: block;
     width: 100%;
     height: auto;
 }
 
-
 .contenido-bloque {
     flex-basis: 50%; 
     text-align: left;
-    color: antiquewhite; 
+    color: #FFFFFF; 
 }
 
 .contenido-bloque h2 {
     font-size: 2.2em;
-    color: antiquewhite; 
-    color: antiquewhite; 
+    color: #FFFFFF; 
     margin-top: 0;
     margin-bottom: 15px;
     border-bottom: 2px solid #333; 
@@ -323,7 +363,6 @@ h2{
     margin-bottom: 25px;
     line-height: 1.5;
 }
-
 
 .contenido-bloque ul {
     list-style-type: '👉 ';
@@ -338,52 +377,159 @@ h2{
 }
 
 
-
-/*Estilos del footer*/
 footer {
-  
-  background-color: #333; 
-  color: #f4f4f4; 
-  padding: 20px 0; 
-  font-family: 'Roboto', sans-serif; 
-  text-align: center; 
-   }
-   
-   footer section {
-  
-  text-align: center; 
-  margin-bottom: 20px; 
+    
+    background-color: #000000; 
+    color: #FFFFFF; 
+    padding: 30px 40px; 
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    align-items: flex-start; 
 }
 
-footer section p {
-  
-  margin: 5px 0; 
-  font-size: 0.95em; 
+.footer-contacto {
+    flex-basis: 40%; 
+    text-align: left;
+    margin-bottom: 20px; 
+}
+
+.footer-contacto p {
+    margin: 5px 0;
+    line-height: 1.5;
 }
 
 .footer-bottom {
- 
-  border-top: 1px solid #555; 
-  padding-top: 15px;
-  font-size: 0.8em; 
-  color: #aaaaaa; 
-  text-align: center;
-  line-height: 1.4; 
+    flex-basis: 55%; 
+    text-align: right; 
+    border-top: 1px solid #333; 
+    padding-top: 20px;
+    margin-top: 0;
+    font-size: 0.85em;
+    color: #cccccc; 
 }
 
 .footer-bottom p {
-  margin: 5px 0;
-  padding: 0 15px; 
+    margin: 5px 0;
 }
 
 footer a {
-  color: #f4f4f4; 
-  text-decoration: none;
-  transition: color 0.3s ease; 
+    
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    
+    color: #FDB813; 
+    text-decoration: underline; 
 }
 
 
-footer a:hover {
-  color: #FFD700; 
-  text-decoration: underline; 
+@media (max-width: 768px) {
+    
+    
+    header {
+        flex-direction: column; 
+        padding: 15px 10px;
+    }
+
+    .Logo {
+        margin-bottom: 10px;
+    }
+    
+    nav ul {
+        gap: 15px; 
+        padding: 0;
+    }
+    
+    .Nav-bar {
+        width: 100%; 
+        justify-content: center; 
+    }
+
+    
+    .section-main {
+        height: 600px; 
+    }
+
+    .contenido-superpuesto {
+        padding: 20px 30px;
+        max-width: 90%;
+    }
+
+    .contenido-superpuesto h2 {
+        font-size: 1.8em;
+    }
+
+    
+    .caja-servicio {
+        flex-basis: 100%; 
+        margin-bottom: 20px;
+    }
+
+    
+    .beneficios-container {
+        flex-direction: column; 
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .columna-beneficio {
+        flex-basis: 100%; 
+        min-height: auto;
+        border-left: none; 
+        padding-left: 0;
+        
+        border-bottom: 3px solid #000000; 
+        padding-bottom: 20px;
+    }
+    
+    
+    .seccion-formulario {
+        padding: 40px 15px;
+    }
+
+    .formulario-contenedor {
+        padding: 20px;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    
+    .beneficios-layout {
+        flex-direction: column; 
+        padding: 40px 20px;
+    }
+    
+    .imagen-bloque,
+    .contenido-bloque {
+        flex-basis: 100%; 
+    }
+    
+    .imagen-bloque {
+        margin-bottom: 20px; 
+    }
+
+    
+    footer {
+        flex-direction: column; 
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .footer-contacto,
+    .footer-bottom {
+        flex-basis: 100%;
+        text-align: center; 
+        padding: 0;
+    }
+
+    .footer-bottom {
+        border-top: none; 
+        padding-top: 0;
+        margin-top: 15px; 
+    }
 }
